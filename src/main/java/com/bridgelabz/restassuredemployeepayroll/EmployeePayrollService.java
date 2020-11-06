@@ -20,6 +20,11 @@ public class EmployeePayrollService {
 		return 0;
 	}
 
+	public void addEmployeeToPayroll(EmployeePayrollData employeePayrollData, IOService ioService) {
+		if (ioService.equals(IOService.REST_IO))
+			employeePayrollList.add(employeePayrollData);
+	}
+
 	public void printWelcome(String[] args) {
 		System.out.println("Welcome to Rest API");
 	}
