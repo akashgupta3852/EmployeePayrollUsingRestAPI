@@ -38,6 +38,13 @@ public class EmployeePayrollService {
 				.orElse(null);
 	}
 
+	public void deleteEmployeeToPayroll(String name, IOService ioService) {
+		if (ioService.equals(IOService.REST_IO)) {
+			EmployeePayrollData employeePayrollData = this.getEmployeePayrollData(name);
+			employeePayrollList.remove(employeePayrollData);
+		}
+	}
+
 	public void printWelcome(String[] args) {
 		System.out.println("Welcome to Rest API");
 	}
